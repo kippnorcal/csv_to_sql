@@ -6,9 +6,11 @@ from db import Connection
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--filepath", help="file path of csv to parse")
+parser.add_argument("--tablename", help="name of the destination sql able")
 args = parser.parse_args()
-filepath = args.filepath
+file = args.filepath
+table = args.tablename
 
-df = pd.read_csv(filepath, sep=",")
+df = pd.read_csv(file, sep=",")
 conn = Connection()
-conn.insert_into("test_data", df)
+conn.insert_into(table, df)
