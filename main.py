@@ -1,6 +1,7 @@
 import argparse
 import os
 import pandas as pd
+from db import Connection
 
 
 parser = argparse.ArgumentParser()
@@ -9,4 +10,5 @@ args = parser.parse_args()
 filepath = args.filepath
 
 df = pd.read_csv(filepath, sep=",")
-print(df.head())
+conn = Connection()
+conn.insert_into("test_data", df)
