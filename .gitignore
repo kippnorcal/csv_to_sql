@@ -107,3 +107,4 @@ venv.bak/
 # project specific
 *.csv
 .vscode
+.DS_Store
