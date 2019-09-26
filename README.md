@@ -1,5 +1,5 @@
 # csv_to_sql
-Dynamically load csv file to new sql table
+Dynamically load csv file to new ms sql table
 
 ## Getting Started
 
@@ -21,10 +21,11 @@ $ touch .env
 Add the following key value pairs to the `.env` file:
 
 ```
-SERVER_IP=""
-DB="
-USER=""
-PWD=""
+DB_SERVER=""
+DB=""
+DB_SCHEMA=""
+DB_USER=""
+DB_PWD=""
 ```
 
 ### Run the code

@@ -1,7 +1,8 @@
 import argparse
 import os
+
 import pandas as pd
-from db import Connection
+from sqlsorcery import MSSQL
 
 
 parser = argparse.ArgumentParser()
@@ -11,6 +12,12 @@ args = parser.parse_args()
 file = args.filepath
 table = args.tablename
 
-df = pd.read_csv(file, sep=",")
-conn = Connection()
-conn.insert_into(table, df)
+
+def main():
+    df = pd.read_csv(file, sep=",")
+    sql = MSSQL()
+    sql.insert_into(table, df)
+
+
+if __name__ == "__main__":
+    main()

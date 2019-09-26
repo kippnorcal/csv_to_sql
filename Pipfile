@@ -7,9 +7,7 @@ verify_ssl = true
 black = "*"
 
 [packages]
-pandas = "*"
-sqlalchemy = "*"
-pyodbc = "*"
+sqlsorcery = "*"
 
 [requires]
 python_version = "3.7"
